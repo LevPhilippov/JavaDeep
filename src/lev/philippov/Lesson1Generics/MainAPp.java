@@ -101,7 +101,7 @@ public class MainAPp {
             list.add(fruit);
         }
 
-        public boolean compareBoxes (@NotNull Box<? extends Fruit> box) {
+        public boolean compareBoxes (@NotNull Box<?> box) {
             double selfWeight = 0.0d;
 
             selfWeight = list.stream().mapToDouble((ToDoubleFunction<Fruit>) value -> value.getWeight()).sum();
@@ -116,9 +116,8 @@ public class MainAPp {
         }
 
         public static <A extends Fruit> void moveFruitsIntoOneBox(Box <? super A> destBox, Box <? extends A> sourceBox) {
-            for (int i = 0; i < sourceBox.getList().size(); i++) {
-                destBox.add(sourceBox.getList().get(i));
-            }
+            if(destBox == sourceBox) return;
+            destBox.getList().addAll(sourceBox.getList());
             sourceBox.getList().clear();
 
         }

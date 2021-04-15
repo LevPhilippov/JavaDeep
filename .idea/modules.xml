@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JavaDeep.iml" filepath="$PROJECT_DIR$/JavaDeep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDeepLesson1Generics/JavaDeepLesson1Generics.iml" filepath="$PROJECT_DIR$/JavaDeepLesson1Generics/JavaDeepLesson1Generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDeepLesson2JDBC/JavaDeepLesson2JDBC.iml" filepath="$PROJECT_DIR$/JavaDeepLesson2JDBC/JavaDeepLesson2JDBC.iml" />
     </modules>
   </component>
 </project>

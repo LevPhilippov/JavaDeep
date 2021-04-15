@@ -1,7 +1,10 @@
-package lev.philippov.Lesson1Generics;
+package Lesson1Generics;
 
 public class Orange extends Fruit{
     private final double orangeWeight = 1.5d;
+
+    public Orange() {
+    }
 
     @Override
     public double getWeight() {

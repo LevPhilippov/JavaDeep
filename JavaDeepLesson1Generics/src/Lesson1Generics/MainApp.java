@@ -1,4 +1,4 @@
-package lev.philippov.Lesson1Generics;
+package Lesson1Generics;
 
 /*Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);
 Написать метод, который преобразует массив в ArrayList;
@@ -12,16 +12,13 @@ package lev.philippov.Lesson1Generics;
 Не забываем про метод добавления фрукта в коробку.
 */
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.ToDoubleFunction;
 
-public class MainAPp {
+public class MainApp {
     public static void main(String[] args) {
         Integer[] intArray = new Integer[5];
         for (int i = 0; i < intArray.length; i++) {
@@ -36,8 +33,8 @@ public class MainAPp {
         System.out.println(arrayToList(intArray));
 
 
-        MainAPp.Box<Apple> appleBox = new Box<>();
-        MainAPp.Box<Apple> appleBox2 = new Box();
+        MainApp.Box<Apple> appleBox = new Box();
+        MainApp.Box<Apple> appleBox2 = new Box();
 
         appleBox.add(new Apple());
         appleBox.add(new Apple());
@@ -47,7 +44,7 @@ public class MainAPp {
         appleBox2.add(new Apple());
         System.out.println(appleBox2.getList().size());
 
-        MainAPp.Box<Orange> orangeBox = new Box<>();
+        MainApp.Box<Orange> orangeBox = new Box<>();
         orangeBox.add(new Orange());
         orangeBox.add(new Orange());
 
@@ -74,11 +71,12 @@ public class MainAPp {
 //Написать метод, который преобразует массив в ArrayList;
 
     public static <T> List<T> arrayToList (T[] array) {
-        List list = new ArrayList();
-        for (int i = 0; i < array.length; i++) {
-            list.add(array[i]);
-        }
-        return list;
+//        List list = new ArrayList();
+//        for (int i = 0; i < array.length; i++) {
+//            list.add(array[i]);
+//        }
+//        return list;
+        return Arrays.asList(array);
     }
 
 
@@ -91,9 +89,13 @@ public class MainAPp {
 //    Не забываем про метод добавления фрукта в коробку.
 //
     public static class Box <T extends Fruit>{
-        private List<T> list = new ArrayList();
+        private List<T> list;
 
-        public List<T> getList(){
+    public Box() {
+        this.list = new ArrayList();
+    }
+
+    public List<T> getList(){
             return list;
         }
 
@@ -101,17 +103,21 @@ public class MainAPp {
             list.add(fruit);
         }
 
-        public boolean compareBoxes (@NotNull Box<?> box) {
-            double selfWeight = 0.0d;
+    private double getBoxWeight(Box<?> box){
+        return box.getList().stream().mapToDouble((ToDoubleFunction<Fruit>) Fruit::getWeight).sum();
+    }
 
-            selfWeight = list.stream().mapToDouble((ToDoubleFunction<Fruit>) value -> value.getWeight()).sum();
-            System.out.println(selfWeight);
+        public boolean compareBoxes (Box<?> box) {
+//            double selfWeight = 0.0d;
+//
+//            selfWeight = list.stream().mapToDouble((ToDoubleFunction<Fruit>) value -> value.getWeight()).sum();
+//            System.out.println(selfWeight);
+//
+//            double comparebleWeight = 0.0d;
+//            comparebleWeight = box.getList().stream().mapToDouble((ToDoubleFunction<Fruit>) value -> value.getWeight()).sum();
+//            System.out.println(comparebleWeight);
 
-            double comparebleWeight = 0.0d;
-            comparebleWeight = box.getList().stream().mapToDouble((ToDoubleFunction<Fruit>) value -> value.getWeight()).sum();
-            System.out.println(comparebleWeight);
-
-            return Math.abs(selfWeight - comparebleWeight) < 0.0001;
+            return Math.abs(getBoxWeight(this) - getBoxWeight(box)) < 0.0001;
 
         }
 
@@ -119,7 +125,6 @@ public class MainAPp {
             if(destBox == sourceBox) return;
             destBox.getList().addAll(sourceBox.getList());
             sourceBox.getList().clear();
-
         }
 
 

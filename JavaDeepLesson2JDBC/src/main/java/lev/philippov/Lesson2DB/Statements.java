@@ -18,7 +18,8 @@ public class Statements {
 
     public static void prepareStatements(){
         File statements = new File("JavaDeepLesson2JDBC\\src\\main\\resources\\statements.txt");
-        try(InputStreamReader reader = new InputStreamReader(new FileInputStream(statements), StandardCharsets.UTF_8);) {
+
+        try(FileReader reader = new FileReader(statements);) {
             BufferedReader bufferedReader = new BufferedReader(reader);
             StringBuilder sb = new StringBuilder();
                 while(bufferedReader.ready()) {

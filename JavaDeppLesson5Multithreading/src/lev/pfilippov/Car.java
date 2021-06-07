@@ -2,6 +2,7 @@ package lev.pfilippov;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Car implements Runnable {
     private static CyclicBarrier readyBarrier;
@@ -10,6 +11,7 @@ public class Car implements Runnable {
     private int speed;
     private String name;
     private boolean winner;
+    private static AtomicInteger ai = new AtomicInteger(0);
 
     public String getName() {
         return name;
@@ -40,8 +42,7 @@ public class Car implements Runnable {
             race.getStages().get(i).go(this);
         }
         MainClass.finishLatch.countDown();
-        if (!Race.doWeHaveAWinner) {
-            Race.doWeHaveAWinner =true;
+        if (ai.incrementAndGet()==1) {
             winner = true;
         }
         try {

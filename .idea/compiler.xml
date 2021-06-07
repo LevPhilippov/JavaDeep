@@ -8,9 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JavaDeepLesson2JDBC" />
+        <module name="JavaDeep6Testing" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="JavaDeep6Testing" target="8" />
       <module name="JavaDeepLesson2JDBC" target="1.8" />
     </bytecodeTargetLevel>
   </component>

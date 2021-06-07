@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Appenders>
+        <Properties>
+            <Property name="basePath">logs</Property>
+        </Properties>
+
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
+        </Console>
+
+        <File name="FileAppender" fileName="${basePath}+/logfile.log">
+            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
+        </File>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="ERROR">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Root>
+
+        <Logger name="lev.philippov.MainApp" level="TRACE" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+    </Loggers>
+
+</Configuration>

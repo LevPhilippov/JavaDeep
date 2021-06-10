@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
 
-    <Appenders>
-        <Properties>
-            <Property name="basePath">logs</Property>
-        </Properties>
+    <Properties>
+        <Property name="basePath" value="JavaDeep6Testing/logs"/>
+    </Properties>
 
-        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+
+    <Appenders>
+
+        <Console name="STDOUT" target="SYSTEM_OUT">
             <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
         </Console>
 
-        <File name="FileAppender" fileName="${basePath}+/logfile.log">
+        <File name="FileAppender" fileName="${basePath}/logfile.log">
             <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
         </File>
 
@@ -18,7 +20,7 @@
 
     <Loggers>
         <Root level="ERROR">
-            <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="STDOUT"/>
         </Root>
 
         <Logger name="lev.philippov.MainApp" level="TRACE" additivity="false">

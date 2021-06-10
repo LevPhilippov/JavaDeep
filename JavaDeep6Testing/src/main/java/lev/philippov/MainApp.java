@@ -1,14 +1,17 @@
 package lev.philippov;
 
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class MainApp {
 
+    int i;
+
     private static final Logger logger = LogManager.getLogger(MainApp.class.getName());
+    private static final Logger rootlogger = LogManager.getLogger("");
 
     public static void main(String[] args) {
+        rootlogger.error("RootErrorLogger");
         logger.error("ErrorLog");
         logger.trace("Tracelog");
         Calculator calculator = new Calculator();

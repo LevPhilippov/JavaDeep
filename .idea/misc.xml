@@ -3,8 +3,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/JavaDeepLesson2JDBC/pom.xml" />
-        <option value="$PROJECT_DIR$/JavaDeep6Testing/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaDeep7ReflectionAnnotations/pom.xml" />
       </list>
     </option>
   </component>

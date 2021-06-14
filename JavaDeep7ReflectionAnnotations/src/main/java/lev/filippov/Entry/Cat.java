@@ -32,4 +32,24 @@ public class Cat {
 
     @ColumnDB
     private String owner;
+
+    public double getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
 }

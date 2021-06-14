@@ -1,0 +1,4 @@
+classDB org.postgresql.Driver
+url jdbc:postgresql://localhost:5432/postgres?currentSchema=lesson
+user postgres
+password admin

@@ -11,6 +11,7 @@ public class MainApp {
     private static Statement statement;
     private static PreparedStatement preparedStatement;
 
+
     public static void main(String[] args) throws SQLException {
         prepareConnection();
         prepareStatements();

@@ -1,8 +1,8 @@
-package lev.filippov.Entry;
+package lev.filippov.Huburnote.Entry;
 
-import lev.filippov.ColumnDB;
-import lev.filippov.Constraints;
-import lev.filippov.TableDB;
+import lev.filippov.Huburnote.ColumnDB;
+import lev.filippov.Huburnote.Constraints;
+import lev.filippov.Huburnote.TableDB;
 
 @TableDB
 public class Cat {

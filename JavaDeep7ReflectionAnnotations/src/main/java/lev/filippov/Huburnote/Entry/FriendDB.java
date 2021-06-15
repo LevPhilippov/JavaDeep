@@ -1,15 +1,13 @@
-package lev.filippov.Entry;
+package lev.filippov.Huburnote.Entry;
 
-import lev.filippov.ColumnDB;
-import lev.filippov.NotEntryClassException;
-import lev.filippov.TableDB;
+import lev.filippov.Huburnote.ColumnDB;
+import lev.filippov.Huburnote.NotEntryClassException;
+import lev.filippov.Huburnote.TableDB;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

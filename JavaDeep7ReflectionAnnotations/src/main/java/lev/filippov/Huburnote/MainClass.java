@@ -1,10 +1,7 @@
-package lev.filippov;
+package lev.filippov.Huburnote;
 
-import lev.filippov.Entry.Cat;
-import lev.filippov.Entry.FriendDB;
-
-import java.lang.reflect.Field;
-import java.sql.SQLException;
+import lev.filippov.Huburnote.Entry.Cat;
+import lev.filippov.Huburnote.Entry.FriendDB;
 
 public class MainClass {
 

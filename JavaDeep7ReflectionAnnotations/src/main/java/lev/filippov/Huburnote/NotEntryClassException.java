@@ -1,4 +1,4 @@
-package lev.filippov;
+package lev.filippov.Huburnote;
 
 import java.sql.SQLException;
 

@@ -67,8 +67,6 @@ public class FriendDB {
             }
         }
         System.out.println(classOfDataBase + "|"+ url + "|" + user + "|" + password);
-        Class.forName(classOfDataBase);
-        connection=DriverManager.getConnection(url,user,password);
     }
 
     private static String constructSQLCreationQuery(Class clazz) throws SQLException {
